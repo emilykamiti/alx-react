@@ -24,7 +24,7 @@ function CourseList({ listCourses }) {
 }
 
 const styles = StyleSheet.create({
-  tabler: {
+  table: {
     marginTop: "2em",
     width: "100%",
     border: "1px solid #ddd",
