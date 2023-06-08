@@ -11,5 +11,5 @@ export const map = Map({
 
 export const map2 = map.map((value, key) => {
   if (key == 3) value = "Benjamin"
-  if (key == 5 valu = "Oliver"
+  if (key == 5) value = "Oliver"
 })
