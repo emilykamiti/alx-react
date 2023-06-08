@@ -7,5 +7,4 @@ export function getListObject(array) {
 export function addElementToList(list, element) {
   const arrList = List(list);
   return list.push(element);
-
 }
