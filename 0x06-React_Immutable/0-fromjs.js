@@ -5,4 +5,6 @@ function getImmutableObject(object) {
   return immutableMap;
 }
 
-module.exports = getImmutableObject;
+module.exports = {
+    getImmutableObject
+};

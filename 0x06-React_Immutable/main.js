@@ -1,4 +1,4 @@
-const getImmutableObject = require('./0-fromjs');
+const {getImmutableObject} = require('./0-fromjs');
 
 const object = {
   fear: true,
