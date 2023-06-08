@@ -1,4 +1,5 @@
 import { Map } from 'immutable';
+// import { List } from './node_modules/immutable/dist/immutable';
 
 export const map = Map({
   1: 'Liam',
@@ -6,7 +7,7 @@ export const map = Map({
   3: 'Elijah',
   4: 'Oliver',
   5: 'Jacob',
-  6: 'Lucas'
+  6: 'Lucas',
 });
 
 export const map2 = map.withMutations((item) => {
