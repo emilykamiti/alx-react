@@ -1,6 +1,6 @@
 import { Map } from 'immutable';
 
-export const map = Map({
+export const map = new Map({
   1: 'Liam',
   2: 'Noah',
   3: 'Elijah',
