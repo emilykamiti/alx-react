@@ -1,5 +1,5 @@
 import { Map } from 'immutable';
-//chained mutations
+
 
 export const map = Map({
   1: 'Liam',
