@@ -1,5 +1,6 @@
 import { Map } from 'immutable';
-// Chained mutations
+
+// Create & export a constant named map
 
 export const map = Map({
   1: 'Liam',
