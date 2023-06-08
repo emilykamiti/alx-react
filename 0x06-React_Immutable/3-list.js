@@ -5,6 +5,6 @@ export function getListObject(array) {
 }
 
 export function addElementToList(list, element) {
-  const arrList = List(list):
+  const arrList = List(list);
   return arrList.withMutations((list) => list.push(element));
 }
