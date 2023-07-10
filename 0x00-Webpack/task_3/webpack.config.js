@@ -1,6 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-wepack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.export = {
   plugins: [
@@ -9,7 +9,7 @@ module.export = {
     }),
     new CleanWebpackPlugin()
   ],
-  devtool: 'Inline-source-map',
+  devtool: 'inline-source-map',
   mode: 'development',
   entry: {
     header: {
@@ -27,7 +27,7 @@ module.export = {
     shared: 'jquery'
   },
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, './public'),
     filename: '[name].bundle.js'
   },
   optimization: {
@@ -41,7 +41,7 @@ module.export = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public')
+      directory: path.join(__dirname, './public')
     },
     compress: true,
     port: 8564
