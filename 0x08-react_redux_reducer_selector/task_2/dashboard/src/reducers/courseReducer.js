@@ -1,36 +1,27 @@
-import { Map } from 'immutable';
-import { FETCH_COURSE_SUCCESS, SELECT_COURSE, UNSELECT_COURSE } from '../actions/courseActionsTypes';
+import Immutable from 'immutable';
 
-const initialState = [];
+export const initialState = Immutable.List([]);
 
-const courseReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case FETCH_COURSE_SUCCESS: {
-            const courses = action.data.map(course => {
-                return Map({
-                    ...course,
-                    isSelected: false
-                });
-            });
-            return courses;
-        }
-        case SELECT_COURSE: {
-            const index = action.index;
-            if (index >= 0 && index < state.length) {
-                return state.update(index, course => course.set('isSelelcted', true));
-            }
-            return state;
-        }
-        case UNSELECT_COURSE: {
-            const index = action.index;
-            if (index >= 0 && index < state.length) {
-                return state.update(index, course => course.set('isSelected', false));
-            }
-            return state;
-        }
-        default:
-            return state;
-    }
-};
-
-export default courseReducer;
+export default function courseReducer(state = initialState, action) {
+  switch (action.type) {
+    case FETCH_COURSE_SUCCESS:
+      return state.merge(
+        action.data.map((course) => Immutable.fromJS({
+          id: course.id,
+          name: course.name,
+          credit: course.credit,
+          isSelected: false
+        }))
+      );
+    case SELECT_COURSE:
+      const index = action.index;
+      const course = state.get(index);
+      return state.set(index, course.set('isSelected', true));
+    case UNSELECT_COURSE:
+      const index = action.index;
+      const course = state.get(index);
+      return state.set(index, course.set('isSelected', false));
+    default:
+      return state;
+  }
+}
